@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Genki I Kanji</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="jquery/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/genki_i_kanji.css">
+    <script type="text/javascript" src="javascripts/genki_i_kanji.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <h1>Genki I Kanji</h1>
+        <nav>
+            <div class="group">
+                <button onclick="show_kanji();">
+                    Kanji
+                </button>
+                <button onclick="show_onkun();">
+                    On/Kun Yomi
+                </button>
+                <button onclick="show_def();">
+                    Definition
+                </button>
+            </div>
+            <div class="group">
+                <select name="chapter" id="chapter" onchange="process_kanji(csv_data, parseInt(this.value));">
+                    <option value="3">Ch. 3</option>
+                    <option value="4">Ch. 4</option>
+                    <option value="5">Ch. 5</option>
+                    <option value="6">Ch. 6</option>
+                    <option value="7">Ch. 7</option>
+                    <option value="8">Ch. 8</option>
+                    <option value="9">Ch. 9</option>
+                    <option value="10">Ch. 10</option>
+                    <option value="11">Ch. 11</option>
+                    <option value="12">Ch. 12</option>
+                    <option value="0" selected>All Kanji</option>
+                </select>
+                <button onclick="randomize();">Randomize</button>
+            </div>
+            <div class="group">
+                <button id="show-stroke-order-btn" class="checkbox-btn"
+                    onclick="check_box(this);toggle_stroke(this);">Show Stroke
+                    Order</button>
+                <button onclick="toggle_fs();">Fullscreen</button>
+            </div>
+        </nav>
+        <br>
+        <br>
+    </header>
+
+
+
+    <main>
+        <div id="exit_fs_btn" style="display: none;">
+            <button onclick="toggle_fs();">Exit Fullscreen</button>
+        </div>
+        <div id="prev-btn" class="card-btn fs-limit" onclick="prev();"></div>
+        <div id="card-holder" class="fs-limit"></div>
+        <div id="next-btn" class="card-btn fs-limit" onclick="next();"></div>
+    </main>
+
+
+
+    <footer>
+        <br>
+        <br>
+        <button class="checkbox-btn" onclick="check_box(this);toggle_information(this);">More Information</button>
+        <br>
+        <div id="footer-content" style="display: none;">
+            <h3>Shortcuts</h3>
+            <table style="text-align: left; display: inline-block;">
+                <tr>
+                    <td>K</td>
+                    <th>Kanji</th>
+                </tr>
+                <tr>
+                    <td>O</td>
+                    <th>On/Kun Yomi</th>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <th>Definition</th>
+                </tr>
+                <tr>
+                    <td>R</td>
+                    <th>Randomize</th>
+                </tr>
+                <tr>
+                    <td>S</td>
+                    <th>Toggle Stroke Order</th>
+                </tr>
+                <tr>
+                    <td>LEFT ARROW</td>
+                    <th>Previous Card</th>
+                </tr>
+                <tr>
+                    <td>RIGHT ARROW</td>
+                    <th>Next Card</th>
+                </tr>
+            </table>
+            <h3>Author</h3>
+            <p>
+                Web Tool Created by <b>Trevor Richard</b>.
+                Last Edited on <i><time id="last_modified_by" datetime=""></time></i>.
+            </p>
+            <h3>References</h3>
+            <p style="text-indent: -2em; padding-left: 2em;">
+                Banno, E., Ohno, Y., Sakane, Y., Shinagawa, C., Takashiki, K., Japan Times, ltd., & JP Trading, Inc.
+                (1999).
+                Genki: An integrated course in elementary Japanese = shokyū Nihongo "genki". Tōkyō: Japan Times.
+            </p>
+            <h3>Help</h3>
+            <p>
+                If you do not see the stroke order font, please download an install to your device and try again.
+                Stroke order font available for download <a
+                    href="https://sites.google.com/site/nihilistorguk/">here</a>.
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

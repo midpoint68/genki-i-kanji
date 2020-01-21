@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+main {
+    text-align: center;
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+
+footer p{
+    text-align: left;
+}
+
+button {
+    border-radius: 7px;
+    background-color: lightslategray;
+    color: white;
+    padding: 10px;
+    border: 1px solid lightslategray;
+    font-weight: bold;
+    width: max-content;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(183, 194, 206);
+}
+
+select {
+    border-radius: 7px;
+    background-color: lightslategray;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td, th{
+    padding: 5px;
+    border-bottom: 1px solid white;
+}
+
+#card-holder {
+    display: inline-block;
+    vertical-align: middle;
+    width: 55vw;
+    max-width: 300px;
+    height: 50vmax;
+    max-height: 300px;
+    margin-left: 6vw;
+    margin-right: 6vw;
+}
+
+#card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 7px;
+    box-shadow: 0 0 2vmax lightslategray;
+    overflow: hidden;
+}
+
+#card-flip {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+#card-flip:hover {
+    border-radius: 0 0 50px 0;
+    box-shadow: 0 0 1.5vmax lightslategray;
+}
+
+#back {
+    width: 90%;
+    height: 90%;
+}
+
+#prev-btn::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-25%, -50%) rotate(-45deg);
+    width: 5vw;
+    max-width: 30px;
+    height: 5vw;
+    max-height: 30px;
+    border-top: 7px solid white;
+    border-left: 7px solid white;
+    border-radius: 7px;
+}
+
+#next-btn::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-75%, -50%) rotate(45deg);
+    width: 5vw;
+    max-width: 30px;
+    height: 5vw;
+    max-height: 30px;
+    border-top: 7px solid white;
+    border-right: 7px solid white;
+    border-radius: 7px;
+}
+
+#footer-content{
+    display: inline-block;
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    color: white;
+    border-radius: 7px;
+    background-color: lightslategray;
+    margin-top: 35px;
+}
+
+#exit_fs_btn{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.checkbox-btn {
+    border: 1px solid lightslategray;
+    background-color: white;
+    color: lightslategray;
+}
+
+.checkbox-btn:hover{
+    background-color: #ddd;
+}
+
+.checkbox-btn-checked {
+    background-color: lightslategray;
+    color: white;
+}
+
+.card-btn {
+    position: relative;
+    color: white;
+    background-color: lightslategray;
+    display: inline-block;
+    vertical-align: middle;
+    width: 10vw;
+    max-width: 60px;
+    height: 50vmax;
+    max-height: 300px;
+    border-radius: 7px;
+    box-shadow: 0 0 2vmax lightslategray;
+}
+
+.card-btn:hover {
+    background-color: rgb(183, 194, 206);
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.quad {
+    display: inline-block;
+    width: 50%;
+    height: 50%;
+    padding: 7px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.jp {
+    font-family: 'Sawarabi Mincho', sans-serif;
+    white-space: pre-wrap;
+}
+
+.kanji-large {
+    font-size: 120px;
+}
+
+.onkun-large {
+    font-size: 24px;
+}
+
+.kanji-small {
+    font-size: 32px;
+}
+
+.en-large {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.kanji-stroke-order {
+    font-family: 'KanjiStrokeOrders_v4.002';
+}
+
+.group {
+    display: inline-block;
+    width: max-content;
+    margin-bottom: 15px;
+}
+
+.fs{
+    max-width: 100% !important;
+    max-height: 100% !important;
+    height: 90vmin !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
