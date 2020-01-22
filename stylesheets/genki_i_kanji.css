@@ -141,6 +141,18 @@ td, th{
     margin-bottom: 25px;
 }
 
+#kanji-frame{
+    width: 146px;
+    height: 146px;
+    overflow: hidden;
+}
+
+#kanji-image{
+    height: 146px;
+    float: left;
+    position: relative;
+}
+
 .checkbox-btn {
     border: 1px solid lightslategray;
     background-color: white;
@@ -210,10 +222,6 @@ td, th{
 .en-large {
     font-size: 32px;
     font-weight: bold;
-}
-
-.kanji-stroke-order {
-    font-family: 'KanjiStrokeOrders_v4.002';
 }
 
 .group {

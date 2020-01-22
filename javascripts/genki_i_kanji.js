@@ -71,7 +71,8 @@ function process_kanji(data, chapter) {
                     "def": attr[2],
                     "stroke": attr[3],
                     "page": attr[4],
-                    "chapter": attr[5]
+                    "chapter": attr[5],
+                    "id": i
                 };
                 dict.push(entry);
             }
@@ -108,7 +109,7 @@ function prev() {
 function show_kanji() {
     action = show_kanji;
     let entry = dict[current];
-    let front = `<span class='jp kanji kanji-large ${(show_stroke ? "kanji-stroke-order" : "")}'>${entry.kanji}</span>`;
+    let front = `<span class='jp kanji kanji-large ${(show_stroke ? "kanji-stroke-order" : "")}'>${(show_stroke ? "<div id='kanji-frame'><img id='kanji-image' style='left: -" + (160.25 * entry.id) + "px;' src='kanji.png'/></div>" : entry.kanji)}</span>`;
     let onkun = "";
     for (let i = 0; i < entry.onkun.length; i++) {
         onkun += entry.onkun[i] + (i < entry.onkun.length - 1 ? ", " : "");
@@ -183,9 +184,10 @@ function check_box(elem) {
 
 function toggle_stroke(elem) {
     show_stroke = !show_stroke;
-    $(".kanji").toggleClass("kanji-stroke-order", show_stroke);
+    //$(".kanji").toggleClass("kanji-stroke-order", show_stroke);
     let html = (show_stroke ? "Hide Stroke Order" : "Show Stroke Order");
     $(elem).html(html);
+    action();
 }
 
 function toggle_information(elem) {
