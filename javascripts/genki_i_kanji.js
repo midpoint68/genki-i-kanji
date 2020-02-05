@@ -76,8 +76,8 @@ function process_kanji(data, chapter) {
                 };
                 dict.push(entry);
             }
-        } catch {
-            console.error("There wasa problem parsing line " + i);
+        } catch (err) {
+            console.error(err.toString() + "There wasa problem parsing line " + i);
         }
     }
     next();
